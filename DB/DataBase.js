@@ -1,3 +1,3 @@
-export let customer_arr = [];
+export let customer_arr2 = [];
 
-export let item_arr = [];
+export let item_arr2 = [];
