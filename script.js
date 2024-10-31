@@ -1,6 +1,6 @@
 /*==============================================Customer==================================================================*/
 /*add customer*/
-let customer_arr = [];
+let customer_arr_se = [];
 $("#Customer-add").on("click", function() {
     let Customer_Name =$("#customerName").val();
     let Customer_NIC =$("#customerNIC").val();
@@ -11,22 +11,22 @@ $("#Customer-add").on("click", function() {
     console.log(Customer_Contact);
 
     let Customer = {
-            id:"C"+( customer_arr.length + 1) ,
+            id:"C"+( customer_arr_se.length + 1) ,
             CustomerName : Customer_Name,
             CustomerNIC : Customer_NIC,
             CustomerContact: Customer_Contact
     };
     let existCustomer = false;
-    for (let i = 0; i <customer_arr.length; i++) {
-        if (customer_arr[i].CustomerNIC === Customer_NIC) {
+    for (let i = 0; i <customer_arr_se.length; i++) {
+        if (customer_arr_se[i].CustomerNIC === Customer_NIC) {
             existCustomer = true;
             console.log("All ready add Customer");
             break;
         }
     }
         if (!existCustomer) {
-            customer_arr.push(Customer);
-            console.log(customer_arr);
+            customer_arr_se.push(Customer);
+            console.log(customer_arr_se);
             loadCustomerTable();
         }
 
@@ -34,7 +34,7 @@ $("#Customer-add").on("click", function() {
 
 const loadCustomerTable = () =>{
     $("#customerTableBody").empty();
-    customer_arr.map((item, index) =>{
+    customer_arr_se.map((item, index) =>{
         console.log(item);
         let data =`<tr><td>${item.id}</td><td>${item.CustomerName}</td><td>${item.CustomerNIC}</td><td>${item.CustomerContact}</td></tr>`
         $("#customerTableBody").append(data);
@@ -46,9 +46,9 @@ const loadCustomerTable = () =>{
 $("#customer-delete").on("click", function() {
     let Customer_NIC = $("#inputContactNIC").val();
 
-    for (let i = 0; i < customer_arr.length; i++) {
-        if (customer_arr[i].CustomerNIC === Customer_NIC) {
-            customer_arr.splice(i, 1);
+    for (let i = 0; i < customer_arr_se.length; i++) {
+        if (customer_arr_se[i].CustomerNIC === Customer_NIC) {
+            customer_arr_se.splice(i, 1);
         }else{
             console.log("Customer not found");
         }
@@ -60,11 +60,11 @@ $("#customer-delete").on("click", function() {
 /*Search customer*/
 $("#customer-search").on("click", function() {
     let Customer_NIC = $("#inputContactNIC").val();
-    for (let i = 0; i < customer_arr.length; i++) {
-        if (customer_arr[i].CustomerNIC === Customer_NIC) {
-            $("#customerName").val(customer_arr[i].CustomerName);
-            $("#customerNIC").val(customer_arr[i].CustomerNIC);
-            $("#customerContact").val(customer_arr[i].CustomerContact);
+    for (let i = 0; i < customer_arr_se.length; i++) {
+        if (customer_arr_se[i].CustomerNIC === Customer_NIC) {
+            $("#customerName").val(customer_arr_se[i].CustomerName);
+            $("#customerNIC").val(customer_arr_se[i].CustomerNIC);
+            $("#customerContact").val(customer_arr_se[i].CustomerContact);
         }
     }
 });
@@ -77,10 +77,10 @@ $("#customer-update").on("click", function() {
 
     let existCustomer = false;
 
-    for (let i = 0; i < customer_arr.length; i++) {
-        if (customer_arr[i].CustomerNIC === Customer_NIC) {
-            customer_arr[i].CustomerName = Customer_Name;
-            customer_arr[i].CustomerContact = Customer_Contact;
+    for (let i = 0; i < customer_arr_se.length; i++) {
+        if (customer_arr_se[i].CustomerNIC === Customer_NIC) {
+            customer_arr_se[i].CustomerName = Customer_Name;
+            customer_arr_se[i].CustomerContact = Customer_Contact;
 
             existCustomer = true;
             console.log("Customer update");
