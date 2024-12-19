@@ -1,40 +1,49 @@
 export default class ItemModel{
-    constructor(id,name,price,qty) {
-        this._id = id;
-        this._name = name;
-        this._price = price;
-        this._qty = qty;
+    constructor(itemId,itemName,Quantity,UnitPrice,Description) {
+        this._itemId = itemId;
+        this._itemName =itemName;
+        this._Quantity = Quantity;
+        this._UnitPrice = UnitPrice;
+        this._Description = Description;
     }
 
-    get id() {
-        return this._id;
+    get Description() {
+        return this._Description;
     }
 
-    set id(value) {
-        this._id = value;
+    set Description(value) {
+        this._Description = value;
     }
 
-    get name() {
-        return this._name;
+    get itemId() {
+        return this._itemId;
     }
 
-    set name(value) {
-        this._name = value;
+    set itemId(value) {
+        this._itemId = value;
     }
 
-    get price() {
-        return this._price;
+    get itemName() {
+        return this._itemName;
     }
 
-    set price(value) {
-        this._price = value;
+    set itemName(value) {
+        this._itemName = value;
     }
 
-    get qty() {
-        return this._qty;
+    get Quantity() {
+        return this._Quantity;
     }
 
-    set qty(value) {
-        this._qty = value;
+    set Quantity(value) {
+        this._Quantity = value;
+    }
+
+    get UnitPrice() {
+        return this._UnitPrice;
+    }
+
+    set UnitPrice(value) {
+        this._UnitPrice = value;
     }
 }

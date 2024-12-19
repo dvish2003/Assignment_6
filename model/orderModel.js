@@ -1,59 +1,86 @@
+
 export default class OrderModel {
-    constructor(orderID,CustomerNIC,ItemName,Price,Qty,Total) {
-        this._orderID = orderID;
-        this._CustomerNIC = CustomerNIC;
-        this._ItemName = ItemName;
-        this._Price = Price;
-        this._Qty = Qty;
-        this._Total = Total;
-
+    constructor(order_id, order_date, customer_id, item_id, order_qty, total, cash, discount, balance) {
+        this._order_id = order_id;
+        this._order_date = order_date;
+        this._customer_id = customer_id;
+        this._item_id = item_id;
+        this._order_qty = order_qty;
+        this._total = total;
+        this._cash = cash;
+        this._discount = discount;
+        this._balance = balance;
     }
 
-    get orderID() {
-        return this._orderID;
+    get order_id() {
+        return this._order_id;
     }
 
-    set orderID(value) {
-        this._orderID = value;
+    set order_id(value) {
+        this._order_id = value;
     }
 
-    get CustomerNIC() {
-        return this._CustomerNIC;
+    get order_date() {
+        return this._order_date;
     }
 
-    set CustomerNIC(value) {
-        this._CustomerNIC = value;
+    set order_date(value) {
+        this._order_date = value;
     }
 
-    get ItemName() {
-        return this._ItemName;
+    get customer_id() {
+        return this._customer_id;
     }
 
-    set ItemName(value) {
-        this._ItemName = value;
+    set customer_id(value) {
+        this._customer_id = value;
     }
 
-    get Price() {
-        return this._Price;
+    get item_id() {
+        return this._item_id;
     }
 
-    set Price(value) {
-        this._Price = value;
+    set item_id(value) {
+        this._item_id = value;
     }
 
-    get Qty() {
-        return this._Qty;
+    get order_qty() {
+        return this._order_qty;
     }
 
-    set Qty(value) {
-        this._Qty = value;
+    set order_qty(value) {
+        this._order_qty = value;
     }
 
-    get Total() {
-        return this._Total;
+    get total() {
+        return this._total;
     }
 
-    set Total(value) {
-        this._Total = value;
+    set total(value) {
+        this._total = value;
+    }
+
+    get cash() {
+        return this._cash;
+    }
+
+    set cash(value) {
+        this._cash = value;
+    }
+
+    get discount() {
+        return this._discount;
+    }
+
+    set discount(value) {
+        this._discount = value;
+    }
+
+    get balance() {
+        return this._balance;
+    }
+
+    set balance(value) {
+        this._balance = value;
     }
 }
